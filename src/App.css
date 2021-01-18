@@ -2,15 +2,21 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* .poster {
+  position: relative;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.play_button {
+  display: block;
+  position: absolute;
+  min-width: 5%;
+  min-height: 5%;
+  transform: translate(250%, -70%);
+  cursor: pointer;
+  color: red;
+  background-color: white;
+
+  border-radius: 1000%;
 }
 
 .App-header {
@@ -24,15 +30,59 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.linkMovie:link {
+  text-decoration: none;
+  color: black;
+}
+.card-title {
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie_info {
+  color: black;
+}
+
+.container {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.nav_brand {
+  color: red !important;
+  font-weight: 100px !important;
+}
+
+.nav_text {
+  letter-spacing: 3px;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: black !important;
+  background-color: red;
+  border: 1px solid #dee2e6;
+}
+
+.banner {
+  max-width: 99%;
+  max-height: 99%;
+}
+
+.movie_detail {
+  color: white;
+}
+
+.movie_container {
+  margin-left: 10%;
 }
