@@ -9,12 +9,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function MovieList({ movieList }) {
   //console.log(movieList);
   return (
-    <Container>
+    <Container className="col-8">
       <CardDeck>
         <Row>
           {movieList.map((movie, index) => {
             return (
-              <Col md={4} className="pt-5">
+              <Col md={4} className="pt-5" style={{ witdh: "18rem" }}>
                 <Link
                   to={`/movie/${movie.id}/${movie.original_title}`}
                   className="linkMovie"

@@ -33,13 +33,7 @@ function DetailMovie() {
 
   return (
     <div>
-      {isLoading ? (
-        <h1>isLoading</h1>
-      ) : (
-        <div>
-          <Movie movie={movie} />
-        </div>
-      )}
+      {isLoading ? <h1>isLoading</h1> : <Movie movie={movie} id={id} />}
     </div>
   );
 }
