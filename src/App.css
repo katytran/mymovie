@@ -1,3 +1,6 @@
+#root {
+  max-width: 1420px;
+}
 .App {
   text-align: center;
 }
@@ -8,10 +11,8 @@
 
 .play_button {
   display: block;
-  position: absolute;
   min-width: 5%;
   min-height: 5%;
-  transform: translate(250%, -70%);
   cursor: pointer;
   color: red;
   background-color: white;
@@ -85,4 +86,29 @@
 
 .movie_container {
   margin-left: 10%;
+}
+
+.card-body {
+  height: 100%;
+}
+#test {
+  background-image: url("https://image.tmdb.org/t/p/w500/srYya1ZlI97Au4jUYAktDe3avyA.jpg");
+}
+.background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.3;
+  z-index: -1;
+  width: 100%;
+}
+.background-image-position {
+  position: relative;
+}
+.image-inf {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.modal-content {
+  max-width: fit-content;
 }
