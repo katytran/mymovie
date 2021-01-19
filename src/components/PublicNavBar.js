@@ -26,7 +26,7 @@ function PublicNavBar({ query, setQuery }) {
         to="/movie/now_playing"
         className="nav_brand font-weight-bold"
       >
-        MY MOVIE
+        KATY MOVIE
       </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link as={Link} to="/movie/upcoming">
