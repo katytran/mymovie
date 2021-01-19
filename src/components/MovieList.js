@@ -1,10 +1,9 @@
 import React from "react";
-import DetailMovie from "./DetailMovie";
 import { Link } from "react-router-dom";
 import { Card, CardDeck, Col, Row, Container } from "react-bootstrap";
-import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+// import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MDBMask, MDBView, MDBContainer } from "mdbreact";
 import "mdbreact/dist/css/mdb.css";
 

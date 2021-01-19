@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Image, Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import ReactPlayer from "react-player";
 
 const APIKEY = process.env.REACT_APP_KEYAPI;
@@ -25,7 +25,7 @@ function Movie({ movie, id }) {
       setTrailerUrl(`https://www.youtube.com/watch?v=${data.results[0].key}`);
     }
     fetchData();
-  }, []);
+  }, [id]);
   console.log(trailerUrl);
   return (
     <div
