@@ -14,7 +14,9 @@ function PublicNavBar({ query, setQuery }) {
 
   const handleSearchSubmit = (e) => {
     //e.preventDefault();
-    setQuery(searchTerm);
+    let newQuery = searchTerm;
+    setQuery(newQuery);
+    setSearchTerm("");
   };
 
   return (

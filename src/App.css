@@ -2,16 +2,15 @@
   text-align: center;
 }
 
-/* .poster {
+.movie_card {
   position: relative;
-} */
+}
 
 .play_button {
   display: block;
   position: absolute;
-  min-width: 5%;
-  min-height: 5%;
-  transform: translate(250%, -70%);
+  bottom: 0;
+  right: 0;
   cursor: pointer;
   color: red;
   background-color: white;
@@ -85,4 +84,8 @@
 
 .movie_container {
   margin-left: 10%;
+}
+
+.scroll {
+  overflow-y: scroll;
 }

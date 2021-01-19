@@ -13,14 +13,14 @@ function App() {
     <div>
       <PublicNavBar query={query} setQuery={setQuery} />
 
-      {query ? (
+      {/* {query ? (
         ""
       ) : (
         <img
           src="https://miro.medium.com/max/5200/1*FlVcGpVAvaa9VtndGA4YsQ.jpeg"
           className="banner"
         ></img>
-      )}
+      )} */}
 
       <Switch>
         <Route

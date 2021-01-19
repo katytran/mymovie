@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import PaginationBar from "../components/PaginationBar";
 import MovieList from "../components/MovieList";
+import { useParams } from "react-router-dom";
 
 const APIKEY = process.env.REACT_APP_KEYAPI;
 const APIURL = process.env.REACT_APP_URL;
@@ -14,7 +15,11 @@ function MovieListPage({ type, query }) {
   const [filterMovies, setFilterMovies] = useState([]);
   const [totalPage, setTotalPage] = useState(1);
   let endPoint;
-  console.log(query);
+  if (window.location.href.includes("search")) {
+    type = "search";
+    let lastSlash = window.location.href.lastIndexOf("/");
+    query = window.location.href.substring(lastSlash + 1);
+  }
   useEffect(() => {
     const fetchData = async () => {
       setIsloading(true);
