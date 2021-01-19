@@ -14,7 +14,7 @@ function MovieListPage({ type, query }) {
   const [isLoading, setIsloading] = useState(true);
   const [filterMovies, setFilterMovies] = useState([]);
   const [totalPage, setTotalPage] = useState(1);
-  let endPoint;
+
   if (window.location.href.includes("search")) {
     type = "search";
     let lastSlash = window.location.href.lastIndexOf("/");
@@ -22,6 +22,7 @@ function MovieListPage({ type, query }) {
   }
   useEffect(() => {
     const fetchData = async () => {
+      let endPoint;
       setIsloading(true);
       if (type === "now_playing") {
         endPoint = "movie/now_playing";
