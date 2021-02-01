@@ -1,8 +1,8 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MovieListPage from "./page/MovieListPage";
 import DetailMovie from "./components/DetailMovie";
 import PublicNavBar from "./components/PublicNavBar";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
