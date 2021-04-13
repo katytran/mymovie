@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function SearchForm({ handleSearchSubmit, handleSearch, searchTerm }) {
   return (
-    <Form inline>
+    <Form className="form-search" onSubmit={handleSearchSubmit}>
       <FormControl
         type="text"
         placeholder="Search"
@@ -13,8 +13,9 @@ function SearchForm({ handleSearchSubmit, handleSearch, searchTerm }) {
         value={searchTerm}
       />
       <Button
+        type="submit"
         variant="outline-danger"
-        onClick={handleSearchSubmit}
+        // onClick={}
         as={Link}
         to={`/search/${searchTerm}`}
       >

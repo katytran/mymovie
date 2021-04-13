@@ -42,7 +42,7 @@ function App() {
             <MovieListPage {...props} type="search" query={query} />
           )}
         />
-        <Route path="/movie/:id/:name" component={DetailMovie} />
+        <Route path="/movie/:id" component={DetailMovie} />
       </Switch>
     </div>
   );

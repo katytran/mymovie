@@ -30,10 +30,20 @@
   color: white;
 }
 
+.linkMovie .container {
+  text-align: center;
+}
+
 .linkMovie:link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
+
+.linkMovie:visited {
+  text-decoration: none;
+  color: white;
+}
+
 .card-title {
   color: black;
 }
@@ -41,11 +51,6 @@
 .movie_info {
   color: black;
 }
-
-/* .container {
-  padding-left: 0;
-  margin-left: 0;
-} */
 
 .nav_brand {
   color: red !important;
@@ -60,6 +65,11 @@
   z-index: 3;
   color: #fff;
   background-color: red !important;
+  border-color: red !important;
+}
+.page-item .page-link {
+  z-index: 3;
+  background-color: white !important;
   border-color: red !important;
 }
 
@@ -94,9 +104,7 @@
 .card-body {
   height: 100%;
 }
-#test {
-  background-image: url("https://image.tmdb.org/t/p/w500/srYya1ZlI97Au4jUYAktDe3avyA.jpg");
-}
+
 .background-image {
   position: absolute;
   left: 0;
@@ -114,4 +122,10 @@
 }
 .modal-content {
   max-width: fit-content;
+}
+
+.form-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

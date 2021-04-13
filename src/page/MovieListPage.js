@@ -64,11 +64,13 @@ function MovieListPage({ type, query }) {
   //   // }
   // }, [searchTerm]);
 
+  console.log(movieList);
   return (
     <div>
       {isLoading ? (
-        <h1>isLoading</h1>
+        <></>
       ) : (
+        // <h1>hehe</h1>
         <div>
           <MovieList movieList={movieList} />
           <PaginationBar

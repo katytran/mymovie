@@ -1,11 +1,13 @@
 import React from "react";
 import SearchForm from "./SearchForm";
-import { Nav, Navbar } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { Nav, NavDropdown } from "react-bootstrap";
 
 function PublicNavBar({ query, setQuery }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const history = useHistory();
 
   const handleSearch = (e) => {
     console.log(e.target.value);
@@ -13,14 +15,20 @@ function PublicNavBar({ query, setQuery }) {
   };
 
   const handleSearchSubmit = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     let newQuery = searchTerm;
     setQuery(newQuery);
     setSearchTerm("");
+    history.push(`/search/${searchTerm}`);
   };
 
   return (
-    <Navbar variant="dark" className="nav_text nav">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      variant="dark"
+      className="nav_text nav"
+    >
       <Navbar.Brand
         as={Link}
         to="/movie/now_playing"
@@ -28,20 +36,27 @@ function PublicNavBar({ query, setQuery }) {
       >
         KATY MOVIE
       </Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link as={Link} to="/movie/upcoming">
-          UPCOMING
-        </Nav.Link>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-        <Nav.Link as={Link} to="/movie/top_rated">
-          TOP MOVIES
-        </Nav.Link>
-      </Nav>
-      <SearchForm
-        handleSearch={handleSearch}
-        handleSearchSubmit={handleSearchSubmit}
-        searchTerm={searchTerm}
-      />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto" style={{ textAlign: "center" }}>
+          <Nav.Link as={Link} to="/movie/upcoming">
+            UPCOMING
+          </Nav.Link>
+
+          <Nav.Link as={Link} to="/movie/top_rated">
+            TOP MOVIES
+          </Nav.Link>
+        </Nav>
+        <Nav>
+          <SearchForm
+            className="d-flex"
+            handleSearch={handleSearch}
+            handleSearchSubmit={handleSearchSubmit}
+            searchTerm={searchTerm}
+          />
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 }
