@@ -5,6 +5,7 @@ import DetailMovie from "./components/DetailMovie";
 import PublicNavBar from "./components/PublicNavBar";
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -12,16 +13,6 @@ function App() {
   return (
     <div>
       <PublicNavBar query={query} setQuery={setQuery} />
-
-      {/* {query ? (
-        ""
-      ) : (
-        <img
-          src="https://miro.medium.com/max/5200/1*FlVcGpVAvaa9VtndGA4YsQ.jpeg"
-          className="banner"
-        ></img>
-      )} */}
-
       <Switch>
         <Route
           path="/movie/upcoming"
@@ -44,6 +35,8 @@ function App() {
         />
         <Route path="/movie/:id" component={DetailMovie} />
       </Switch>
+
+      <Footer />
     </div>
   );
 }
