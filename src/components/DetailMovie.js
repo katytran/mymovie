@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Movie from "./Movie";
 import { Link } from "react-router-dom";
-import { Card, CardDeck, Col, Row, Container } from "react-bootstrap";
-import { MDBMask, MDBView, MDBContainer } from "mdbreact";
+import { MDBView, MDBContainer } from "mdbreact";
+import Review from "./Review";
 
 const APIKEY = process.env.REACT_APP_KEYAPI;
 const APIURL = process.env.REACT_APP_URL;
@@ -50,7 +50,6 @@ function DetailMovie() {
     };
     fetchData();
   }, [id]);
-  console.log("similar", similarMovies);
 
   const similarMoviesComp = (
     <div>
@@ -67,15 +66,7 @@ function DetailMovie() {
         {similarMovies.map((movie, index) => {
           if (movie.poster_path !== null)
             return (
-              <Link
-                to={`/movie/${movie.id}`}
-                // to={`/movie/${movie.id}/${movie.original_title.replace(
-                //   /\s/g,
-                //   "+"
-                // )}`}
-                className="linkMovie"
-                key={index}
-              >
+              <Link to={`/movie/${movie.id}`} className="linkMovie" key={index}>
                 <MDBContainer style={{ width: "250px" }} className="pt-5">
                   <MDBView hover zoom>
                     <img
@@ -100,6 +91,7 @@ function DetailMovie() {
       ) : (
         <div>
           <Movie movie={movie} id={id} />
+          <Review id={id} />
           {similarMovies.length !== 0 ? similarMoviesComp : <></>}
         </div>
       )}

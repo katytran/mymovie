@@ -10,7 +10,6 @@ function MovieListPage({ type, query }) {
   const [movieList, setMovieList] = useState([]);
   const [pageNum, setPagenum] = useState(1);
   const [isLoading, setIsloading] = useState(true);
-  //const [filterMovies, setFilterMovies] = useState([]);
   const [totalPage, setTotalPage] = useState(1);
 
   if (window.location.href.includes("search")) {
@@ -52,25 +51,12 @@ function MovieListPage({ type, query }) {
     fetchData();
   }, [type, pageNum, query]);
 
-  // useEffect(() => {
-  //   console.log("Search term", searchTerm);
-  //   // if (searchTerm !== "") {
-  //   //   let filter = movieList.filter((movie) => {
-  //   //     return movie.original_title
-  //   //       .toLowerCase()
-  //   //       .includes(searchTerm.toLowerCase());
-  //   //   });
-  //   //   setFilterMovies(filter);
-  //   // }
-  // }, [searchTerm]);
-
   console.log(movieList);
   return (
     <div>
       {isLoading ? (
         <></>
       ) : (
-        // <h1>hehe</h1>
         <div>
           <MovieList movieList={movieList} />
           <PaginationBar

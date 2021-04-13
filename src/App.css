@@ -129,3 +129,17 @@
   justify-content: center;
   align-items: center;
 }
+
+.review_card {
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+
+  border-radius: 2px;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(243, 240, 240, 0.882);
+  height: fit-content;
+}
