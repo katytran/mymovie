@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="pt-5">
+    <div>
       <footer className="site-footer" style={{ borderTop: "1px solid white" }}>
         <div className="container">
           <div className="row">

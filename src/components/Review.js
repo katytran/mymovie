@@ -9,6 +9,7 @@ const APIURL = process.env.REACT_APP_URL;
 function Review({ id }) {
   const [pageNum, setPageNum] = useState(1);
   const [reviews, setReviews] = useState([]);
+  const [content, setContent] = useState("...");
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -58,7 +59,22 @@ function Review({ id }) {
                   </div>
                   <div>
                     <p class="card-text">
-                      {review.content.replace(/(\r\n|\n|\r)/gm, "")}
+                      {review.content
+                        .replace(/(\r\n|\n|\r)/gm, "")
+                        .slice(0, 300)}
+                      <span
+                        onClick={() => {
+                          {
+                            setContent(
+                              review.content
+                                .replace(/(\r\n|\n|\r)/gm, "")
+                                .slice(300, 500)
+                            );
+                          }
+                        }}
+                      >
+                        {content}
+                      </span>
                     </p>
                   </div>
                 </div>

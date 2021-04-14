@@ -10,7 +10,6 @@ const APIKEY = process.env.REACT_APP_KEYAPI;
 
 function Movie({ movie, id }) {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [trailerUrl, setTrailerUrl] = useState("");
@@ -32,6 +31,11 @@ function Movie({ movie, id }) {
 
   return (
     <div className="background-image-position">
+      <img
+        src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+        className="background-image"
+        alt="i"
+      />
       <div className="image-inf">
         <Row>
           <Col sm={6} className="pt-5" style={{ textAlign: "center" }}>
@@ -85,11 +89,6 @@ function Movie({ movie, id }) {
           </Col>
         </Row>
       </div>
-      <img
-        src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
-        className="background-image"
-        alt="i"
-      />
     </div>
   );
 }

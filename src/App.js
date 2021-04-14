@@ -6,6 +6,7 @@ import PublicNavBar from "./components/PublicNavBar";
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
+import NotFoundPage from "./page/NotFoundPage";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -15,14 +16,22 @@ function App() {
       <PublicNavBar query={query} setQuery={setQuery} />
       <Switch>
         <Route
+          exact
+          path="/"
+          render={(props) => <MovieListPage {...props} type="upcoming" />}
+        />
+        <Route
+          exact
           path="/movie/upcoming"
           render={(props) => <MovieListPage {...props} type="upcoming" />}
         />
         <Route
+          exact
           path="/movie/top_rated"
           render={(props) => <MovieListPage {...props} type="top_rated" />}
         />
         <Route
+          exact
           path="/movie/now_playing"
           render={(props) => <MovieListPage {...props} type="now_playing" />}
         />
@@ -33,7 +42,8 @@ function App() {
             <MovieListPage {...props} type="search" query={query} />
           )}
         />
-        <Route path="/movie/:id" component={DetailMovie} />
+        <Route exact path="/movie/:id" component={DetailMovie} />
+        <Route component={NotFoundPage} />
       </Switch>
 
       <Footer />

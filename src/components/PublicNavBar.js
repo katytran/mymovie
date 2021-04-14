@@ -29,11 +29,7 @@ function PublicNavBar({ query, setQuery }) {
       variant="dark"
       className="nav_text nav"
     >
-      <Navbar.Brand
-        as={Link}
-        to="/movie/now_playing"
-        className="nav_brand font-weight-bold"
-      >
+      <Navbar.Brand as={Link} to="/" className="nav_brand font-weight-bold">
         KATY MOVIE
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
