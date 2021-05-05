@@ -2,7 +2,7 @@
 
 Created with love by Katy Chi Tran ❤
   
-View online at: https://katymovie.netlify.app/![image](https://user-images.githubusercontent.com/74617368/117090626-b226cf00-ad0d-11eb-87ef-87268acd7550.png)
+View online at: https://katymovie.netlify.app/
   
 Katy movie app is a recommendation site that allows user to check out new movies, watch trailer, and read reviews
 
